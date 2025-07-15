@@ -1,24 +1,27 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<repositories>
+    <repository>
+        <id>private-org-repo</id>
+        <url>https://maven.pkg.github.com/YOUR_ORG/YOUR_REPO</url>
+    </repository>
+</repositories>
 
+<pluginRepositories>
+    <pluginRepository>
+        <id>private-org-repo</id>
+        <url>https://maven.pkg.github.com/YOUR_ORG/YOUR_REPO</url>
+    </pluginRepository>
+</pluginRepositories>
+
+<!-- This snippet disables Maven Central -->
+<distributionManagement>
+    <repository>
+        <id>private-org-repo</id>
+        <url>https://maven.pkg.github.com/YOUR_ORG/YOUR_REPO</url>
+    </repository>
+</distributionManagement>
+
+<dependency>
     <groupId>com.example</groupId>
-    <artifactId>fail-auth-sample</artifactId>
-    <version>1.0-SNAPSHOT</version>
-
-    <repositories>
-        <repository>
-            <id>private-org-repo</id>
-            <url>https://maven.pkg.github.com/YOUR_ORG/YOUR_REPO</url>
-        </repository>
-    </repositories>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.github.javaparser</groupId>
-            <artifactId>javaparser-core</artifactId>
-            <version>3.27.0</version>
-        </dependency>
-    </dependencies>
-</project>
+    <artifactId>private-lib</artifactId>
+    <version>0.1.0</version>
+</dependency>
